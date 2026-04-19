@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Solar System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="space-bg" aria-hidden="true">
+      <span class="nebula nebula-a"></span>
+      <span class="nebula nebula-b"></span>
+      <span class="nebula nebula-c"></span>
+    </div>
+
+    <header class="hero section reveal">
+      <p class="eyebrow">Multimedia and Authoring</p>
+      <h1>The Solar System</h1>
+      <h2>Complete Solar System Tour</h2>
+      <p class="intro">
+        Explore every major world from Mercury to Pluto. Enter your Earth age and
+        instantly compare how old you would be across each planet in our solar system.
+      </p>
+
+      <div class="stats" role="list" aria-label="Solar system facts">
+        <div class="stat" role="listitem"><span>8</span> Planets</div>
+        <div class="stat" role="listitem"><span>200+</span> Moons</div>
+        <div class="stat" role="listitem"><span>1</span> Star</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="calculator section reveal" id="calculator">
+        <div class="panel">
+          <h3>Planetary Age Calculator</h3>
+          <p>Type your age in Earth years and calculate your age on each planet.</p>
+
+          <form id="age-form" novalidate>
+            <label for="earth-age">Your Age on Earth</label>
+            <div class="input-row">
+              <input
+                id="earth-age"
+                name="earth-age"
+                type="number"
+                min="0"
+                max="130"
+                step="0.1"
+                placeholder="Enter your age"
+                required
+              />
+              <button type="submit">Calculate</button>
+            </div>
+            <p id="error-message" class="error" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="showcase section reveal" id="planets">
+        <h3>Individual Planet Showcases</h3>
+        <div class="planet-grid">
+          <article class="planet-card" data-planet="Mercury">
+            <p class="tag">Closest to Sun</p>
+            <h4>Mercury</h4>
+            <p class="blurb">A rocky world with long days and dramatic temperature swings.</p>
+            <p class="age-line">Your age on Mercury: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Venus">
+            <p class="tag">Hottest planet</p>
+            <h4>Venus</h4>
+            <p class="blurb">A dense atmosphere creates a runaway greenhouse effect.</p>
+            <p class="age-line">Your age on Venus: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Earth">
+            <p class="tag">Our home</p>
+            <h4>Earth</h4>
+            <p class="blurb">Blue oceans, active geology, and life as we know it.</p>
+            <p class="age-line">Your age on Earth: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Mars">
+            <p class="tag">The red planet</p>
+            <h4>Mars</h4>
+            <p class="blurb">Ancient river valleys and giant volcanoes mark its surface.</p>
+            <p class="age-line">Your age on Mars: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Jupiter">
+            <p class="tag">Gas giant</p>
+            <h4>Jupiter</h4>
+            <p class="blurb">The largest planet, famous for its Great Red Spot storm.</p>
+            <p class="age-line">Your age on Jupiter: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Saturn">
+            <p class="tag">Ringed wonder</p>
+            <h4>Saturn</h4>
+            <p class="blurb">Bright rings and icy moons make Saturn a visual standout.</p>
+            <p class="age-line">Your age on Saturn: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Uranus">
+            <p class="tag">Ice giant</p>
+            <h4>Uranus</h4>
+            <p class="blurb">It rotates on its side with a unique tilted magnetic field.</p>
+            <p class="age-line">Your age on Uranus: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Neptune">
+            <p class="tag">Windy world</p>
+            <h4>Neptune</h4>
+            <p class="blurb">Deep blue clouds and some of the fastest winds in the system.</p>
+            <p class="age-line">Your age on Neptune: <strong data-output>--</strong></p>
+          </article>
+
+          <article class="planet-card" data-planet="Pluto">
+            <p class="tag">Dwarf planet</p>
+            <h4>Pluto</h4>
+            <p class="blurb">A distant icy world with a famous heart-shaped region.</p>
+            <p class="age-line">Your age on Pluto: <strong data-output>--</strong></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="summary section reveal" id="summary">
+        <h3>Planetary Age Summary</h3>
+        <div class="summary-panel">
+          <ul id="summary-list" aria-live="polite">
+            <li><span>Mercury</span><strong data-summary="Mercury">--</strong></li>
+            <li><span>Venus</span><strong data-summary="Venus">--</strong></li>
+            <li><span>Earth</span><strong data-summary="Earth">--</strong></li>
+            <li><span>Mars</span><strong data-summary="Mars">--</strong></li>
+            <li><span>Jupiter</span><strong data-summary="Jupiter">--</strong></li>
+            <li><span>Saturn</span><strong data-summary="Saturn">--</strong></li>
+            <li><span>Uranus</span><strong data-summary="Uranus">--</strong></li>
+            <li><span>Neptune</span><strong data-summary="Neptune">--</strong></li>
+            <li><span>Pluto</span><strong data-summary="Pluto">--</strong></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section">
+      <p>© 2026 Multimedia and Authoring. Solar System Project.</p>
+      <a href="#" class="top-link" aria-label="Back to top">Back to Top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
